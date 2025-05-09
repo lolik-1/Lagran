@@ -1,0 +1,87 @@
+
+.TITLE{
+    text-align: center;
+    font-weight: 600;
+    font-size:24px;
+    padding: 30px 0px 30px 0px;
+}
+
+
+.CARD_CONTAINER{
+    height: 100vh;
+}
+
+.CONTAINER{
+    background-color: white;
+    padding: 0px 0px 40px 0px;
+    box-shadow: #000000 2px 2px 10px;
+}
+
+
+.CARD {
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    
+    padding: 20px 0px 20px 0px;
+}
+.DOCUMENTS{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color:#000000;
+    cursor:"pointer";
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.DOCUMENTS:hover{
+    color: #b71818;
+}
+
+
+@media (max-width:1050px) {
+    .CARD{
+        width: 800px;
+    }
+}
+
+@media (max-width:850px) {
+    .CARD{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .INFOCARD{
+        width: 500px;
+    }
+
+    p{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:500px) {
+    .PDF{
+        width: 15px;
+        height: 15px;
+    }
+    .DOCUMENTS{
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width:450px) {
+    .INFOCARD{
+        width: 360px;
+    }
+    .IMGCARD{
+        width: 200px;
+        height: 120px;
+    }
+
+}

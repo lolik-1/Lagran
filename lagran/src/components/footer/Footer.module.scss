@@ -1,0 +1,26 @@
+.FOOTER_CONTAINER{
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+}
+
+.FOOTER_LOGO{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.FOOTER_ICONS_INFO{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width:600px) {
+    .FOOTER_ICONS_INFO {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

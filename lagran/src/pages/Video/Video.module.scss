@@ -1,0 +1,185 @@
+
+
+.TITLE{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 30px 0px 30px 0px;
+}
+
+.CONTAINER{
+    background-color: white;
+    box-shadow: #000000 2px 2px 10px;
+}
+
+
+.DVR{
+    width: 600PX;
+}
+
+.DVR_TITLE{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.DVR_CONATINER{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.DVR_NAVBAR{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.CAM{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+}
+
+.CAM_TITLE{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.CAM_CONATINER{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.CAM_NAVBAR{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+
+
+@media (max-width:950px) {
+    .CAM{
+        width: 300px;
+        p{
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+    .CAM_CONATINER{
+        padding: 40px 0px;
+        img{
+            width: 250px;
+            height: 250px;
+        }
+    }
+    .CAM_NAVBAR{
+        button {
+            background-color: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 12px;
+            cursor: pointer;
+          }
+          
+    }
+}
+
+@media (max-width:570px) {
+    .CAM_CONATINER{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .CAM{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .CAM_TITLE{
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .CAM_DESCRIPTION{
+        display: flex;
+        justify-content: center;   
+    }
+    
+}
+
+@media (max-width:950px) {
+    .DVR{
+        width: 300px;
+        p{
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+    .DVR_CONATINER{
+        padding: 40px 0px;
+        img{
+            width: 250px;
+            height: 250px;
+        }
+    }
+    .DVR_NAVBAR{
+        button {
+            background-color: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 12px;
+            cursor: pointer;
+          }
+          
+    }
+}
+@media (max-width:570px) {
+    .DVR_CONATINER{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .DVR{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .DVR_TITLE{
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .DVR_DESCRIPTION{
+        display: flex;
+        justify-content: center; 
+        p{
+            font-size: 10px;
+        }  
+    }
+    
+}
