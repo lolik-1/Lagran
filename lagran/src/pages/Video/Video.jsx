@@ -3,7 +3,7 @@ import style from "./Video.module.scss"
 import React from "react";
 import { useStore } from "effector-react";
 import { useState } from "react";
-import { $ActiveTabCam, SetActiveCam, $ActiveTabDVR, SetActiveDVR} from "./Store";
+import {$InstallationVideo, $DescriptionDVR, $DescriptionCam, $ActiveTabCam, SetActiveCam, $ActiveTabDVR, SetActiveDVR} from "./Store";
 
 
 
@@ -11,6 +11,7 @@ import { $ActiveTabCam, SetActiveCam, $ActiveTabDVR, SetActiveDVR} from "./Store
 const Cam = () => {
 
     const ActiveTab = useStore($ActiveTabCam)
+    const DescriptionCam = useStore($DescriptionCam)
 
     const RenderConectCam = () => {
         if (ActiveTab === 'features') {
@@ -21,22 +22,9 @@ const Cam = () => {
             )
         }
         else if (ActiveTab === 'description') {
-
-            const description = [
-                { text: 'Тип камеры:', info: ' Автомобильная, антивандальная' },
-                { text: 'Матрица:', info: ' 1/2,9" CMOS GC2053+FH8536H' },
-                { text: 'Разрешение:', info: ' 2 Mpx (1080P)' },
-                { text: 'Количество активных пикселей:', info: ' 1920×1080' },
-                { text: 'Объектив, мм:', info: ' 2,8/3,6' },
-                { text: 'Угол обзора:', info: ' 100° (2,8), 80° (3,6)' },
-                { text: 'Видеовыход:', info: ' Авиационный интерфейс (4-pin), AHD' },
-                { text: 'Аудиовыход:', info: ' Нет' },
-                { text: 'Максимальное энергопотребление, мА:', info: ' 170' },
-            ]
-
             return (
                 <div>
-                    {description.map((obj) => (
+                    {DescriptionCam.map((obj) => (
                         <div className={style.CAM_DESCRIPTION}>
                             <p>{obj.text}{obj.info}</p>
                             
@@ -74,9 +62,9 @@ const Cam = () => {
 const DVR = () =>{
 
     const ActiveTab = useStore($ActiveTabDVR)
+    const DescriptonDRV = useStore($DescriptionDVR)
 
     const RenderConectDVR = () =>{
-
         if (ActiveTab === 'features') {
             return(
                 <div>
@@ -85,22 +73,9 @@ const DVR = () =>{
             )
         }
         else if (ActiveTab === 'description'){
-
-            const description = [
-                {text:'Стандарт видео:', info:'	PAL, NTSC'},
-                {text:'Сжатие:', info:'H.264, H.265'},
-                {text:'Разрешение видео (общая частота кадров):', info:'4×CIF/D1/960H/720P/1080Р (60 кадр/с)'},
-                {text:'Режим:', info:'4×AHD/TVI/CVI/Аналог (1080P) камеры - поканальное переключение'},
-                {text:'Скорость цифрового потока видео:', info:'216 кбит/с до 4096 Мбит/с'},
-                {text:'Носитель данных:', info:'SD карта до 1 Тб (не идет в комплекте)'},
-                {text:'Видеовход:', info:'	4 - авиационный интерфейс'},
-                {text:'Вход электропитания:', info:'DC 8 – 36 В'},
-                {text:'Размер, мм:', info:'118×141×31'}
-            ]
-
             return(
                 <div>
-                    {description.map((obj) => (
+                    {DescriptonDRV.map((obj) => (
                         <div className={style.DVR_DESCRIPTION}>
                             <p>{obj.text} {obj.info}</p>
                         </div>
@@ -135,11 +110,11 @@ const DVR = () =>{
     )
 }
 
-
-
 const InstallationVideo = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
+    const InstallVideo = useStore($InstallationVideo)
+
 
     const OpenImg = (obj) => {
         setSelectedImage(obj.img);
@@ -149,12 +124,6 @@ const InstallationVideo = () => {
         setSelectedImage(null);
         setIsOpen(false);
     };
-
-    const ImgPhoto = [
-        { img: './img/Slider/VideoSlider/First.jpg', alt: 'img' },
-        { img: './img/Slider/VideoSlider/All.jpg', alt: 'img' },
-        { img: './img/Slider/VideoSlider/Admin.jpg', alt: 'img' },
-    ];
 
     const WindowStyles = {
         position: 'fixed',
@@ -185,7 +154,7 @@ const InstallationVideo = () => {
     return (
         <div style={{ display: 'flex', alignItems: "center", width: '600px', padding: "30px 0px", gap:'20px' }}>
             <div style={{ display: 'flex', justifyContent:'center', gap: '10px', width: '750px', flexWrap: 'wrap' }}>
-                {ImgPhoto.map((obj, index) => (
+                {InstallVideo.map((obj, index) => (
                     <img
                         key={index}
                         onClick={() => OpenImg(obj)}
